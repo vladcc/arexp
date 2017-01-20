@@ -6,10 +6,10 @@ Typing 5 6 + 10 8 4 / - * 3 + instead of (5 + 6) * (10 - 8 / 4) + 3 just isn't f
 use the postfix notation and a stack machine, but convert the normal infix expression behind the scenes. I did some research and found
 out that it's easier said than done - postorder traversal of a binary tree works only for fully parenthesized expressions and typing
 (((((5 + 6) * ((10 - (8 / 4)))) + 3) isn't much fun either, but it's a bit better. So I figured I'd get the infix expression, 
-parethesize it automatically and then parse it into the binary tree. The algorithm they used in FORTRAN I seemed a good fit - just add
+parenthesize it automatically and then parse it into the binary tree. The algorithm they used in FORTRAN I seemed a good fit - just add
 the needed ) and ( around the numbers and voila! That, as awesome as it is, however, couldn't handle consecutive operators of the same 
-precedence when combined with the tree. Or at least I couldn't make it do so. The next option was Dijkstra's Shunting Yard, but seemed 
-like an overkill.
+precedence when combined with the tree. Or at least I couldn't make it do so. The next option was Dijkstra's Shunting Yard, but that 
+seemed like an overkill.
 
 So I sat down to think and figured something else out. It's very simple, really: parse the expression, perform the operations in order
 of precedence and replace them with their results. If you see a '(', parse the expression between the parentheses recursively (I'm much 
