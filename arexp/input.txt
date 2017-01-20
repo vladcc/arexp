@@ -1,0 +1,6 @@
+# calculates the volume of a sphere with radius 5
+# formula: 4/3 * pi * r^3
+-p6
+-o
+4/3 * 3.141592 * 5^3
+q
